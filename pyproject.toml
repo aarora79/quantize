@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quantize"
+version = "0.1.0"
+description = "A simple Python library for quantizing floating point values to int4 values"
+readme = "README.md"
+authors = [
+    {name = "Amit Arora", email = "aa1603@georgetown.edu"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["quantize"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
